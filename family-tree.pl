@@ -1,45 +1,52 @@
-male(john).
+% List of males
 male(bob).
-male(bill).
-male(ron).
-male(jeff).
+male(john).
 
+% List of all females
 female(mary).
-female(sue).
-female(nancy).
+female(sofia).
 
-mother(mary, sue).
-mother(mary, bill).
-mother(sue, nancy).
-mother(sue, jeff).
-mother(jane, ron).
+% List of all the spouses
+% spouse(X,Y) :- X and Y are spouses.
 
-father(john, sue).
-father(john, bill).
-father(bob, nancy).
-father(bob, jeff).
-father(bill, ron).
+spouse(bob, mary).
+spouse(mary, bob).
 
-sibling(bob,bill).
-sibling(sue,bill).
-sibling(nancy,jeff).
-sibling(nancy,ron).
-sibling(jeff,ron).
+% List of all the parents
+% parent(X,Y) :- X is parent of Y.
 
+parent(bob, john).
+parent(bob, sofia).
+parent(mary, john).
+parent(mary, sofia).
 
+% List of all the children
+% child(X,Y) :- X is child of Y.
 
-sibling(X, Y) :-
-      parent(Z, X),
-      parent(Z, Y),
-      X \= Y.
+child(john, bob).
+child(john, mary).
+child(sofia, bob).
+child(sofia, mary).
 
-sister(X, Y) :-
-      sibling(X, Y),
-      female(X).
+% sibling(X,Y) :- X and Y are siblings.
 
-brother(X, Y) :-
-      sibling(X, Y),
-      male(X).
+sibling(john, sofia).
+sibling(sofia, john).
 
-parent(Z,Y) :- father(Z,Y).
-parent(Z,Y) :- mother(Z,Y).
+% father(X,Y) :- X is father of Y.
+father(X,Y) :- parent(X,Y), male(X).
+
+% mother(X,Y) :- X is mother of Y.
+mother(X,Y) :- parent(X,Y), female(X).
+
+% brother(X,Y) :- X is brother of Y.
+brother(X,Y) :- sibling(X,Y), male(X).
+
+% sister(X,Y) :- X is sister of Y.
+sister(X,Y) :- sibling(X,Y), female(X).
+
+% husband(X,Y) :- X is husband of Y.
+husband(X,Y) :- spouse(X,Y), male(X).
+
+% wife(X,Y) :- X is wife of X.
+wife(X,Y) :- spouse(X,Y), female(Y).
