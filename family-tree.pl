@@ -48,5 +48,5 @@ sister(X,Y) :- sibling(X,Y), female(X).
 % husband(X,Y) :- X is husband of Y.
 husband(X,Y) :- spouse(X,Y), male(X).
 
-% wife(X,Y) :- X is wife of X.
-wife(X,Y) :- spouse(X,Y), female(Y).
+% wife(X,Y) :- X is wife of Y.
+wife(X,Y) :- spouse(X,Y), female(X).
