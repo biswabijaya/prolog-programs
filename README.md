@@ -1,5 +1,5 @@
-# prolog-family-tree
-Family Tree using Prolog
+# Prolog
 
-Beginner level Program in Prolog
+Prolog programs
+
 Fork and execute in Swipl
