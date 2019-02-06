@@ -39,7 +39,7 @@ sister(X, Y) :-
 
 brother(X, Y) :-
       sibling(X, Y),
-      male(X).
+      male(X). 
 
 parent(Z,Y) :- father(Z,Y).
 parent(Z,Y) :- mother(Z,Y).
