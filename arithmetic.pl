@@ -1,0 +1,1 @@
+add_2_double(X,Y) :- Y is (X+2)*2.
