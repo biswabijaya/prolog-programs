@@ -1,8 +1,6 @@
 # Prolog
 
-Prolog programs
-
-Fork and execute in Swipl
+Prolog programs. Fork and execute in Swipl
 
 Contents:-
 
